@@ -29,3 +29,15 @@ resource "aws_instance" "prod-ec2" {
         Name = "prod-ec2"
     }
 }
+
+#Creating s3 bucket in the prod Environment
+
+
+resource "aws_s3_bucket" "prod-s3-bucket"{
+    bucket = "devopswithmike-test-bucket"
+    acl = "private"
+
+    tags = {
+        Name = "devopswithmike-test-bucket"
+    }
+}
